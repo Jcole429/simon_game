@@ -1,5 +1,6 @@
 var pathToSounds = "sounds/";
 var buttonColors = ["red", "blue", "green", "yellow"];
+var level = 0;
 
 var gamePattern = [];
 var userClickedPattern = [];
@@ -10,6 +11,11 @@ function nextSequence() {
     gamePattern.push(randomChosenColor);
     playSound(randomChosenColor);
     animatePatternPress(randomChosenColor);
+}
+
+function incrementLevel() {
+    level++;
+    $("#level-title").text("Level " + level);
 }
 
 function playSound(color) {
@@ -39,5 +45,6 @@ $(".btn").on("click", function () {
 });
 
 $(document).keypress(function () {
+    incrementLevel();
     nextSequence();
 })
