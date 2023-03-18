@@ -15,6 +15,7 @@ function gameOver() {
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
+    userClickedPattern = [];
     gamePattern.push(randomChosenColor);
     playSound(randomChosenColor);
     animatePatternPress(randomChosenColor);
