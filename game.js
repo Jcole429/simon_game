@@ -12,7 +12,7 @@ function checkAnswer(currentLevel) {
             setTimeout(function () {
                 nextSequence();
                 incrementLevel();
-            }, 2000);
+            }, 1000);
         }
     } else {
         gameOver();
