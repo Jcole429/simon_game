@@ -10,6 +10,7 @@ function checkAnswer(currentLevel) {
         if (userClickedPattern.length == level) {
             setTimeout(function () {
                 nextSequence();
+                incrementLevel();
             }, 2000);
         }
     } else {
