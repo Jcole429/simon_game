@@ -1,6 +1,7 @@
 var pathToSounds = "sounds/";
 var buttonColors = ["red", "blue", "green", "yellow"];
 var level = 0;
+var isStarted = false;
 
 var gamePattern = [];
 var userClickedPattern = [];
@@ -23,6 +24,7 @@ function gameOver() {
     level = 0;
     gamePattern = [];
     userClickedPattern = [];
+    isStarted = false;
 }
 
 function nextSequence() {
@@ -67,6 +69,9 @@ $(".btn").on("click", function () {
 });
 
 $(document).keypress(function () {
-    incrementLevel();
-    nextSequence();
+    if (isStarted == false) {
+        isStarted = true;
+        incrementLevel();
+        nextSequence();
+    }
 })
