@@ -1,2 +1,2 @@
 # Summary
-Simon game from The Complete 2023 Web Development Bootcamp
+Press any key to start the game and then try to follow Simon for as long as you can!
