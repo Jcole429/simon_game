@@ -5,6 +5,18 @@ var level = 0;
 var gamePattern = [];
 var userClickedPattern = [];
 
+function checkAnswer(currentLevel) {
+    if (userClickedPattern[currentLevel] == gamePattern[currentLevel]) {
+        if (userClickedPattern.length == level) {
+            setTimeout(function () {
+                nextSequence();
+            }, 2000);
+        }
+    } else {
+        gameOver();
+    }
+}
+
 function gameOver() {
     $("#level-title").text("Game Over!\nPress A Key to Start!");
     level = 0;
@@ -50,6 +62,7 @@ $(".btn").on("click", function () {
     userClickedPattern.push(this.id);
     playSound(this.id);
     animatePress(this.id);
+    checkAnswer(userClickedPattern.length - 1);
 });
 
 $(document).keypress(function () {
