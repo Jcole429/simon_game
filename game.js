@@ -1,5 +1,16 @@
 var pathToSounds = "sounds/";
+var buttonColors = ["red", "blue", "green", "yellow"];
+
+var gamePattern = [];
 var userClickedPattern = [];
+
+function nextSequence() {
+    var randomNumber = Math.floor(Math.random() * 4);
+    var randomChosenColor = buttonColors[randomNumber];
+    gamePattern.push(randomChosenColor);
+    playSound(randomChosenColor);
+    animatePatternPress(randomChosenColor);
+}
 
 function playSound(color) {
     var audio = new Audio(pathToSounds + color + ".mp3");
@@ -21,3 +32,7 @@ $(".btn").on("click", function () {
     playSound(this.id);
     animatePress(this.id);
 });
+
+$(document).keypress(function () {
+    nextSequence();
+})
