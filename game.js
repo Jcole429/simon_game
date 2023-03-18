@@ -27,6 +27,11 @@ function animatePress(currentColor) {
     }, 100);
 }
 
+function animatePatternPress(currentColor) {
+    var nextButton = $("#" + currentColor)
+    nextButton.fadeIn(100).fadeOut(100).fadeIn(100);
+}
+
 $(".btn").on("click", function () {
     userClickedPattern.push(this.id);
     playSound(this.id);
