@@ -5,6 +5,13 @@ var level = 0;
 var gamePattern = [];
 var userClickedPattern = [];
 
+function gameOver() {
+    $("#level-title").text("Game Over!\nPress A Key to Start!");
+    level = 0;
+    gamePattern = [];
+    userClickedPattern = [];
+}
+
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
