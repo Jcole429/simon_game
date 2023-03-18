@@ -62,10 +62,12 @@ function animatePatternPress(currentColor) {
 }
 
 $(".btn").on("click", function () {
-    userClickedPattern.push(this.id);
-    playSound(this.id);
-    animatePress(this.id);
-    checkAnswer(userClickedPattern.length - 1);
+    if (isStarted == true) {
+        userClickedPattern.push(this.id);
+        playSound(this.id);
+        animatePress(this.id);
+        checkAnswer(userClickedPattern.length - 1);
+    }
 });
 
 $(document).keypress(function () {
